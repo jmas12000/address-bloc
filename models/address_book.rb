@@ -47,4 +47,8 @@ class AddressBook
  
     return nil
   end
+  
+  def incenerate_all_entries
+    entries.clear
+  end
 end

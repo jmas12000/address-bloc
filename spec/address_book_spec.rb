@@ -23,6 +23,15 @@ RSpec.describe AddressBook do
     end
   end
   
+  describe "#incenerate_all_entries" do
+    it "it deletes all entries in an array" do
+      book.import_from_csv("entries.csv")
+      expect(book.entries.size).to eq(5)
+      book.incenerate_all_entries
+      expect(book.entries.size).to eq(0)
+    end
+  end   
+  
   describe "#add_entry" do
     it "adds only one entry to the address book" do
       book.add_entry('Ada Lovelace', '010.012.1815', 'augusta.king@lovelace.com')
